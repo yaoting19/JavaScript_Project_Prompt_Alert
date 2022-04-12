@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        do{
+            var lottery = [Math.floor(Math.random()*39+1), Math.floor(Math.random()*39+1)
+            , Math.floor(Math.random()*39+1)];
+            console.log(lottery);
+        } while (lottery[0] == lottery[1] || lottery[0] == lottery[2] || lottery[1] == lottery[2])
+        //Generate 3 random 'DIFFERENT' integers between 1-40
+        do{
+            var myNum = [parseInt(prompt('First number', 'Between 1-40, all numbers shold be different'))
+            , parseInt(prompt('Second number', 'Between 1-40, all numbers should be different'))
+            , parseInt(prompt('Third Number', 'Between 1-40, all numbers should be different'))];
+        } while(myNum[0] == myNum[1] || myNum[0] == myNum[2] || myNum[1] == myNum[2])
+        //Input 3 random 'DIFFERENT' integers between 1-40
+        var i = 0
+        if (lottery[0] == myNum[0] || lottery[0] == myNum[1] || lottery[0] == myNum[2]) {
+            i++
+        }
+        if (lottery[1] == myNum[0] || lottery[1] == myNum[1] || lottery[1] == myNum[2]) {
+            i++
+        }
+        if (lottery[2] == myNum[0] || lottery[2] == myNum[1] || lottery[2] == myNum[2]) {
+            i++
+        }
+        if (lottery[0] == myNum[0] && lottery[1] == myNum[1] && lottery[2] == myNum[2]) {
+            i = 4;
+        }
+        switch(i) {
+            case 1:
+                alert('You win the third prize!');
+                break;
+            case 2:
+                alert('You win the second prize!');
+                break;
+            case 3:
+                alert('Congratulations, you win the first prize!');
+                break;
+            case 4:
+                alert('You win the jackpot!');
+                break;
+            default:
+                alert('Sorry, you didn’t win this time!');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var phrase = prompt('Please input a phrase').toLowerCase().replace(/[\s+\W+]/g, ''); /*The Regex 
+        you use to ignore spaces and punctuation*/
+        var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        var abc = true;
+        for (i = 0; i < 26; i++) {
+            if(phrase.indexOf(alphabet[i])<0){
+               alert('This phrase is NOT a pangrammatic window');
+               abc = false;
+            }
+        } /*It means when i < 26, find the letter in alphabet[i] and check if it's in phrase's string.
+        It will search from a-z because alphabet is a string of a-z and each time we run the loop, i adds
+        1 (i starts with 0 so it'll start with the first letter 'a'). If a certain letter can't be found 
+        in phrase's string, it will return -1*/
+        if (abc) {
+            alert('This IS a pangrammatic window');
+        }
+    </script>
+</body>
+</html>

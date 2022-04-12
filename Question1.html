@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+<body>
+    <script>
+        var event = prompt('What event are you competing in, 100m or 400m?').toLowerCase();
+        var sex = prompt('Are you competing in men\'s or women\'s?').toLowerCase().
+        replace(/\W+/g, ''); //The Regex to use to ignore punctuation
+        var time = prompt('What\'s your record?');
+        if (event == 100 + 'm' && sex == 'mens'){
+           var wind = prompt('What was the wind speed?');
+           if (wind < 2.0 && time < 9.58 ) {
+                alert('Congratulations, you have broken the world record in men\'s 100m!!!');
+            } else {
+                alert('Usain Bolt is laughing at you lol');
+            }
+        } else if (event == 100 + 'm' && sex == 'womens') {
+            var wind = prompt('What was the wind speed?');
+            if (wind < 2.0 && time < 10.49) {
+                alert('Wow, you have broken the world record in women\'s 100m!!!');
+            } else {
+                alert('Nah, record in women\'s 100m is unbreakable');
+            }
+        } else if (event == 400 + 'm' && sex == 'mens') {
+            if (time <43.04) {
+                alert('No man on earth runs faster than you at 400m!!!');
+            } else {
+                alert('Guess you are too early to challenge the 400m record in men\'s lol');
+            }            
+        } else if (event == 400 + 'm' && sex == 'womens') {
+            if (time < 47.60) {
+                alert('Women\'s 400m record? A piece of cake!');
+            } else {
+                alert('Never underestimate how fast a woman can run in 400m!');
+            }    
+        } else  {
+            alert('Are you drunk?');
+        }
+    </script>
+</body>
+</head>
+</html>
